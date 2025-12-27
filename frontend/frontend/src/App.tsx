@@ -17,6 +17,7 @@ import DoctorVisits from "./pages/DoctorVisits";
 import Profile from "./pages/Profile";
 
 import NotFound from "./pages/NotFound";
+import { InstallPWA } from "./components/InstallPWA";
 
 const queryClient = new QueryClient();
 
@@ -59,6 +60,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <InstallPWA />
         <BrowserRouter>
           <AppRoutes />
         </BrowserRouter>

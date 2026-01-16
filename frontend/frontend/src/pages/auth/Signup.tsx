@@ -19,6 +19,7 @@ export default function Signup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [aadhaar, setAadhaar] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState<UserRole>(defaultRole);
   const [showPassword, setShowPassword] = useState(false);
@@ -29,7 +30,7 @@ export default function Signup() {
     setIsLoading(true);
 
     try {
-      await signup(name, email, password, phone, role);
+      await signup(name, email, password, phone, role, aadhaar);
       toast({
         title: 'Account created!',
         description: 'Welcome to Kavach.',
@@ -138,6 +139,21 @@ export default function Signup() {
                   className="bg-white/50 border-slate-200 focus:border-primary focus:ring-primary/20 transition-all rounded-xl h-11"
                 />
               </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="aadhaar" className="text-slate-700">Aadhaar Number (Optional)</Label>
+              <Input
+                id="aadhaar"
+                type="text"
+                placeholder="12-digit Aadhaar number"
+                value={aadhaar}
+                onChange={(e) => {
+                  const val = e.target.value.replace(/\D/g, '');
+                  if (val.length <= 12) setAadhaar(val);
+                }}
+                className="bg-white/50 border-slate-200 focus:border-primary focus:ring-primary/20 transition-all rounded-xl h-11"
+              />
             </div>
 
             <div className="space-y-2">

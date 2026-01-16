@@ -6,6 +6,7 @@ export interface User {
   name: string;
   role: UserRole;
   phone?: string;
+  aadhaar?: string;
 }
 
 export interface Child {

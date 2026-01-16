@@ -154,16 +154,18 @@ export default function Profile() {
       </div>
 
       {/* Menu Items */}
-      <Card className="divide-y divide-border">
+      <Card className="divide-y divide-border overflow-hidden">
         {menuItems.map((item, index) => (
           <button
             key={index}
             onClick={item.onClick}
-            className="w-full flex items-center gap-4 p-4 hover:bg-muted/50 transition-colors"
+            className="w-full flex items-center gap-4 p-4 hover:bg-slate-100 active:bg-slate-200 transition-colors cursor-pointer touch-manipulation"
           >
-            <item.icon className="h-5 w-5 text-muted-foreground" />
-            <span className="flex-1 text-left text-foreground">{item.label}</span>
-            <ChevronRight className="h-5 w-5 text-muted-foreground" />
+            <div className="h-10 w-10 rounded-xl bg-slate-100 flex items-center justify-center">
+              <item.icon className="h-5 w-5 text-slate-600" />
+            </div>
+            <span className="flex-1 text-left text-slate-800 font-medium">{item.label}</span>
+            <ChevronRight className="h-5 w-5 text-slate-400" />
           </button>
         ))}
       </Card>

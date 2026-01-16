@@ -15,7 +15,7 @@ interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
   login: (email: string, password: string, role: UserRole) => Promise<void>;
-  signup: (name: string, email: string, password: string, phone: string, role: UserRole) => Promise<void>;
+  signup: (name: string, email: string, password: string, phone: string, role: UserRole, aadhaar?: string) => Promise<void>;
   logout: () => void;
   loading: boolean;
 }
@@ -68,7 +68,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // User state update is handled by onAuthStateChanged
   };
 
-  const signup = async (name: string, email: string, password: string, phone: string, role: UserRole) => {
+  const signup = async (name: string, email: string, password: string, phone: string, role: UserRole, aadhaar?: string) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const firebaseUser = userCredential.user;
 
@@ -78,6 +78,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       name,
       role,
       phone,
+      aadhaar: aadhaar || '',
     };
 
     await setDoc(doc(db, 'users', firebaseUser.uid), newUser);

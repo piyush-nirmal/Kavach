@@ -15,6 +15,7 @@ import Notifications from "./pages/Notifications";
 import Centers from "./pages/Centers";
 import DoctorVisits from "./pages/DoctorVisits";
 import Profile from "./pages/Profile";
+import ProviderDashboard from "./pages/ProviderDashboard";
 
 import NotFound from "./pages/NotFound";
 import { InstallPWA } from "./components/InstallPWA";
@@ -37,6 +38,8 @@ function AppRoutes() {
       <Route path="/" element={<PublicRoute><UserTypeSelect /></PublicRoute>} />
       <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
       <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>} />
+
+      <Route path="/provider-dashboard" element={<ProtectedRoute><ProviderDashboard /></ProtectedRoute>} />
 
       <Route element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
         <Route path="/dashboard" element={<Dashboard />} />

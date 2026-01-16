@@ -30,7 +30,11 @@ export default function Login() {
         title: 'Welcome back!',
         description: 'You have successfully logged in.',
       });
-      navigate('/dashboard');
+      if (role === 'provider') {
+        navigate('/provider-dashboard');
+      } else {
+        navigate('/dashboard');
+      }
     } catch (error) {
       console.error('Login error:', error);
       const message = error instanceof Error ? error.message : 'Please check your credentials and try again.';

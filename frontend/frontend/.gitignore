@@ -1,9 +1,0 @@
-node_modules
-
-dist
-build
-.DS_Store
-.vscode
-.idea
-.env
-dev-dist

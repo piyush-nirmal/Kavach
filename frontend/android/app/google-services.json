@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "8001327790",
+    "project_id": "kavach-1b28c",
+    "storage_bucket": "kavach-1b28c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8001327790:android:54431968acdbea2e18533f",
+        "android_client_info": {
+          "package_name": "com.kavach.health"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVGlihWkagUG2ACOgVqkKfRp4b3WURwV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

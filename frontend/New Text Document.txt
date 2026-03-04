@@ -1,0 +1,78 @@
+🛡️ Kavach: Child Immunization & Healthcare Platform
+Digital Health Tracking | Mobile-First | Clinical Precision
+
+📋 Executive Summary
+Kavach is a comprehensive, mobile-first web application designed to bridge the gap between parents and healthcare providers. By digitizing the National Immunization Schedule, Kavach ensures that no child misses a life-saving vaccine through real-time tracking, automated reminders, and a secure provider portal.
+
+🚀 Technical Architecture
+The platform leverages a modern, type-safe, and scalable stack designed for high performance and offline capability.
+
+Frontend & UX
+Framework: React 18 + Vite (Lightning-fast builds & HMR)
+
+Language: TypeScript (Ensures medical data integrity via static typing)
+
+Styling: Tailwind CSS & Shadcn UI (Utility-first, accessible components)
+
+Mobile Strategy: PWA via vite-plugin-pwa (Installable on Home Screen)
+
+Backend & Security (BaaS)
+Authentication: Firebase Auth (Role-Based Access Control)
+
+Database: Cloud Firestore (NoSQL real-time synchronization)
+
+Storage: Firebase Storage (Encrypted hosting for medical documents)
+
+👪 Feature Set: Parents & Guardians
+Digital Health Vault: Register multiple children, store DOB, and upload birth certificates.
+
+Immunization Tracker: * Visual status indicators: Completed, Pending, Due Soon, and Overdue.
+
+Automated scheduling based on National Guidelines.
+
+Smart Care: * Access clinical notes, diagnoses, and digital prescriptions.
+
+Locate nearby authorized vaccination centers via integrated maps.
+
+Notifications: Push notifications for upcoming milestones and scheduled checkups.
+
+👩‍⚕️ Feature Set: Healthcare Providers
+Clinical Workflow: * Rapid Patient Lookup via Phone/Email.
+
+Family-Centric View: Manage all siblings under a single parent profile.
+
+Immunization Management:
+
+Administer vaccines with Manufacturer Batch/Lot Number tracking.
+
+Log biometric data (height/weight) and general consultation notes.
+
+Digital Records: Upload photos of handwritten prescriptions directly to the child’s vault.
+
+Engagement Tools: Broadcast alerts to the patient base (e.g., "Flu shots available").
+
+🔒 Security & Data Privacy
+Role-Based Access Control (RBAC): Strict isolation between Parent and Provider dashboards.
+
+Data Integrity: Firestore Security Rules ensure users only access authorized records.
+
+Immutable Identity: Core account metrics are locked post-registration to prevent hijacking.
+
+🛠️ Project Structure
+Plaintext
+src/
+├── components/       # UI (Layouts, Buttons, Navigation)
+├── contexts/         # Global State (AuthContext, HealthContext)
+├── data/             # Static Immunization Schedules
+├── hooks/            # Custom logic (useVaccineCalculator)
+├── lib/              # Firebase & Utility configurations
+├── pages/            # Application Views (Auth, Dashboard, Portal)
+└── types/            # TypeScript Interfaces (Child, Vaccine, User)
+💻 Local Setup
+Clone: git clone <repo-url> && cd frontend/frontend
+
+Install: npm install
+
+Configure: Create .env with Firebase credentials (VITE_FIREBASE_API_KEY, etc.).
+
+Launch: npm run dev (Default: http://localhost:5173)
